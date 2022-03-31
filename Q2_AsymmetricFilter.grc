@@ -1,0 +1,370 @@
+options:
+  parameters:
+    author: gnuradio
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: Q2_AsymmetricFilter
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: freq
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '100'
+    step: '1'
+    stop: '45000'
+    value: '1000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [301, 29]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '100000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '3000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [594, 252]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_1
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: freq
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [605, 385]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [873, 387]
+    rotation: 0
+    state: true
+- name: fir_filter_xxx_0
+  id: fir_filter_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_delay: '0'
+    taps: "[-0.0035016793730763608,\n  0.010227397900727221,\n  -0.017312029953984554,\n\
+      \  0.018112399266820175,\n  -0.008017623074594157,\n  -0.009834947925940106,\n\
+      \  0.024837259651984037,\n  -0.0269968287818944,\n  0.01614421012523863,\n \
+      \ -0.0027645279140073586,\n  -0.0015586877981444132,\n  -0.004905386439715962,\n\
+      \  0.013029841032252102,\n  -0.013025354815411505,\n  0.0049007037060082095,\n\
+      \  0.002231641450348788,\n  -0.0009702757278010014,\n  -0.005975427440172632,\n\
+      \  0.009437518051110991,\n  -0.004922328191587614,\n  -0.002165706259418292,\n\
+      \  0.0033944845264092275,\n  0.0022547872271015306,\n  -0.007241356233100217,\n\
+      \  0.00498668104060772,\n  0.0018434730107370085,\n  -0.004721311312407328,\n\
+      \  0.00011047251128663375,\n  0.0059413853764390375,\n  -0.005451081539387879,\n\
+      \  -0.0012085833939882672,\n  0.005603154523554115,\n  -0.0020113863625449333,\n\
+      \  -0.005015341573440203,\n  0.006267903040854867,\n  0.00019829570982638807,\n\
+      \  -0.006217916381271978,\n  0.003855890779948514,\n  0.00410029107423173,\n\
+      \  -0.007316926338141165,\n  0.0012300681026816297,\n  0.0065950009302472795,\n\
+      \  -0.005855524695860146,\n  -0.002939403940067279,\n  0.008506789268918687,\n\
+      \  -0.0031729929769107887,\n  -0.00665243892566088,\n  0.008119709584747812,\n\
+      \  0.0013152701864900516,\n  -0.009758087194040355,\n  0.005772624413468757,\n\
+      \  0.006245943940518512,\n  -0.010746427338786961,\n  0.0010351821740671849,\n\
+      \  0.010983580997703687,\n  -0.009249918381635238,\n  -0.005161874296772019,\n\
+      \  0.013916970971211463,\n  -0.004557765620259429,\n  -0.01204498342533683,\n\
+      \  0.014009675000392454,\n  0.003030583633300661,\n  -0.01798802900883093,\n\
+      \  0.010013449955574315,\n  0.012989141972964805,\n  -0.021321238641307375,\n\
+      \  0.0011324621640551396,\n  0.0241013626933552,\n  -0.019847424659428937,\n\
+      \  -0.01365246740538344,\n  0.0349982369458351,\n  -0.010573770074024672,\n\
+      \  -0.03661989927574507,\n  0.04417833716863266,\n  0.014089643703556297,\n\
+      \  -0.07875482989432306,\n  0.050296776451801826,\n  0.10463056995110531,\n\
+      \  -0.2979942078059704,\n  0.38575256557781107,\n  -0.2979942078059704,\n  0.10463056995110531,\n\
+      \  0.050296776451801826,\n  -0.07875482989432306,\n  0.014089643703556297,\n\
+      \  0.04417833716863266,\n  -0.03661989927574507,\n  -0.010573770074024672,\n\
+      \  0.0349982369458351,\n  -0.01365246740538344,\n  -0.019847424659428937,\n\
+      \  0.0241013626933552,\n  0.0011324621640551396,\n  -0.021321238641307375,\n\
+      \  0.012989141972964805,\n  0.010013449955574315,\n  -0.01798802900883093,\n\
+      \  0.003030583633300661,\n  0.014009675000392454,\n  -0.01204498342533683,\n\
+      \  -0.004557765620259429,\n  0.013916970971211463,\n  -0.005161874296772019,\n\
+      \  -0.009249918381635238,\n  0.010983580997703687,\n  0.0010351821740671849,\n\
+      \  -0.010746427338786961,\n  0.006245943940518512,\n  0.005772624413468757,\n\
+      \  -0.009758087194040355,\n  0.0013152701864900516,\n  0.008119709584747812,\n\
+      \  -0.00665243892566088,\n  -0.0031729929769107887,\n  0.008506789268918687,\n\
+      \  -0.002939403940067279,\n  -0.005855524695860146,\n  0.0065950009302472795,\n\
+      \  0.0012300681026816297,\n  -0.007316926338141165,\n  0.00410029107423173,\n\
+      \  0.003855890779948514,\n  -0.006217916381271978,\n  0.00019829570982638807,\n\
+      \  0.006267903040854867,\n  -0.005015341573440203,\n  -0.0020113863625449333,\n\
+      \  0.005603154523554115,\n  -0.0012085833939882672,\n  -0.005451081539387879,\n\
+      \  0.0059413853764390375,\n  0.00011047251128663375,\n  -0.004721311312407328,\n\
+      \  0.0018434730107370085,\n  0.00498668104060772,\n  -0.007241356233100217,\n\
+      \  0.0022547872271015306,\n  0.0033944845264092275,\n  -0.002165706259418292,\n\
+      \  -0.004922328191587614,\n  0.009437518051110991,\n  -0.005975427440172632,\n\
+      \  -0.0009702757278010014,\n  0.002231641450348788,\n  0.0049007037060082095,\n\
+      \  -0.013025354815411505,\n  0.013029841032252102,\n  -0.004905386439715962,\n\
+      \  -0.0015586877981444132,\n  -0.0027645279140073586,\n  0.01614421012523863,\n\
+      \  -0.0269968287818944,\n  0.024837259651984037,\n  -0.009834947925940106,\n\
+      \  -0.008017623074594157,\n  0.018112399266820175,\n  -0.017312029953984554,\n\
+      \  0.010227397900727221,\n  -0.0035016793730763608]"
+    type: ccc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 390]
+    rotation: 0
+    state: true
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1032, 232]
+    rotation: 0
+    state: true
+- name: qtgui_freq_sink_x_0_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1323, 387]
+    rotation: 0
+    state: true
+
+connections:
+- [analog_sig_source_x_0, '0', blocks_add_xx_0, '0']
+- [analog_sig_source_x_1, '0', blocks_add_xx_0, '1']
+- [blocks_add_xx_0, '0', fir_filter_xxx_0, '0']
+- [blocks_add_xx_0, '0', qtgui_freq_sink_x_0, '0']
+- [fir_filter_xxx_0, '0', qtgui_freq_sink_x_0_0, '0']
+
+metadata:
+  file_format: 1
